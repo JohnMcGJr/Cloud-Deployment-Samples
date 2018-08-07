@@ -26,7 +26,6 @@ def add_params(t):
             Type="String",
             Default="m4.4xlarge",
             AllowedValues=[
-                    "t2.medium",
                     "m4.xlarge",
                     "m4.2xlarge",
                     "m4.4xlarge",
@@ -131,7 +130,7 @@ def add_secgroup(t):
 
 # add_nodes() takes a given Template object, an count of nodes to create, and
 # a name to prefix all EC2 instances with. EC2 instances will be created with the
-# naming structure of Prefix + Qumulo + NodeNumber.
+# naming structure of Prefix + Node + NodeNumber.
 def add_nodes(t, nodes, prefix):
     nodes_list = []
 
@@ -213,11 +212,6 @@ def write_listing_cfts(prefix, suffix, amiid):
     f_ten_node.close()
 
 if __name__ == '__main__':
-    write_listing_cfts("QF2", "5TB", "AMI-ID-US-EAST-1") #to be replaced with real 5TB AMIID
+    write_listing_cfts("QF2", "5TB", "ami-0756b42577c89cece") #to be replaced with real 5TB AMIID
     write_listing_cfts("QF2", "20TB", "AMI-ID-US-EAST-1") #to be replaced with real 5TB AMIID
-
-
-
-
-
-
+    
